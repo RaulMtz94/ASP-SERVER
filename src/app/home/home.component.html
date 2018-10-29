@@ -1,0 +1,15 @@
+<h1>Pagina de inicio</h1>
+
+<br>
+<div *ngIf="isUserAuthenticated()" style="color:blue;">
+  <h2>
+    Tu estas logueado
+  </h2>
+</div>
+
+<br>
+<ul>
+  <li><a routerLink="/customers">Proveedores</a></li>
+  <li *ngIf="!isUserAuthenticated()"><a routerLink="/login">Iniciar Sesion</a></li>
+  <li *ngIf="isUserAuthenticated()"><a class="logout" (click)="logOut()">Salir</a></li>
+</ul>
